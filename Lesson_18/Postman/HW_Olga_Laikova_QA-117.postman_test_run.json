@@ -1,0 +1,206 @@
+{
+	"id": "0cb270be-ae8e-4bad-abe5-f6be4f27a4a3",
+	"name": "HW_Olga_Laikova_QA-117",
+	"timestamp": "2023-09-30T15:17:44.412Z",
+	"collection_id": "29778348-faac3a67-49df-4e68-8bb0-62d7b8b7df7b",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 13,
+	"delay": "2",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-09-30T15:17:39.722Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "bd9210aa-4351-47e8-9b8a-457df626f8bd",
+			"name": "New Request - POST (p)",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 1832,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"The created User name is correct.": true,
+				"The created User city is correct": true,
+				"The created User gender is correct": true,
+				"The created User age is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The created User name is correct.": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The created User city is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The created User gender is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The created User age is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1832
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"The created User name is correct.": true,
+					"The created User city is correct": true,
+					"The created User gender is correct": true,
+					"The created User age is correct": true
+				}
+			]
+		},
+		{
+			"id": "fbed49d4-cfe1-440f-b1d3-04d193efe790",
+			"name": "New Request - GET (p)",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=6aabf7de-14ca-4849-ab7f-415d368953d9",
+			"time": 534,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 800ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				534
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 800ms": true
+				}
+			]
+		},
+		{
+			"id": "8d074afe-413e-4da4-a664-ae0f14a6493f",
+			"name": "New Request - PATCH (p)",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=6aabf7de-14ca-4849-ab7f-415d368953d9",
+			"time": 750,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"The edited User name is correct": true,
+				"The edited User city is correct": true,
+				"The edited User gender is correct": true,
+				"The edited User age is correct.": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The edited User name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The edited User city is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The edited User gender is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The edited User age is correct.": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				750
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"The edited User name is correct": true,
+					"The edited User city is correct": true,
+					"The edited User gender is correct": true,
+					"The edited User age is correct.": false
+				}
+			]
+		},
+		{
+			"id": "d0695c76-d219-4832-96bd-31708ce0fd97",
+			"name": "New Request - Get (p)",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=6aabf7de-14ca-4849-ab7f-415d368953d9",
+			"time": 529,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"User is deleted": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User is deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				529
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"User is deleted": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3645,
+	"collection": {
+		"requests": [
+			{
+				"id": "bd9210aa-4351-47e8-9b8a-457df626f8bd",
+				"method": "POST"
+			},
+			{
+				"id": "fbed49d4-cfe1-440f-b1d3-04d193efe790",
+				"method": "GET"
+			},
+			{
+				"id": "8d074afe-413e-4da4-a664-ae0f14a6493f",
+				"method": "PATCH"
+			},
+			{
+				"id": "d0695c76-d219-4832-96bd-31708ce0fd97",
+				"method": "DELETE"
+			}
+		]
+	}
+}

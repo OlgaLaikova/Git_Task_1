@@ -1,0 +1,1126 @@
+{
+	"info": {
+		"_postman_id": "faac3a67-49df-4e68-8bb0-62d7b8b7df7b",
+		"name": "HW_Olga_Laikova_QA-117",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29778348"
+	},
+	"item": [
+		{
+			"name": "Practice_Requests",
+			"item": [
+				{
+					"name": "New Request - Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Leonardo\",\n    \"age\": 55,\n    \"gender\": \"male\",\n    \"city\": \"Dnipro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request - Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=\"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\"",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "\"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request - Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\",\n    \"age\": 55,\n    \"city\": \"Lviv\",\n    \"gender\": \"male\",\n    \"name\": \"Daniel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=\"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\"",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "\"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request - Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=\"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\"",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "\"ce946d5d-9b13-422c-b2af-1a7e0c77ed3d\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home Work",
+			"item": [
+				{
+					"name": "Post requests (variable-body)",
+					"item": [
+						{
+							"name": "New Request - Post (p)  1",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName\", \"Dmitro\");",
+											"pm.environment.set(\"newUserAge\", 55);",
+											"pm.environment.set(\"newUserGender\", \"male\");",
+											"pm.environment.set(\"newUserCity\", \"Lviv\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User name is created.\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserName\")",
+											");",
+											"});",
+											"pm.test(\"User city is created\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserCity\"));",
+											"});",
+											"pm.test(\"User gender is created\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserGender\")",
+											");",
+											"});",
+											"pm.test(\"User age is created\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserAge\")",
+											");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{newUserName}}\",\n    \"age\": {{newUserAge}},\n    \"gender\": \"{{newUserGender}}\",\n    \"city\": \"{{newUserCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+									"protocol": "https",
+									"host": [
+										"em",
+										"staging",
+										"api",
+										"onereach",
+										"ai"
+									],
+									"path": [
+										"http",
+										"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Post (p) 2",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName\", \"Oleksandr\");",
+											"pm.environment.set(\"newUserAge\", 10);",
+											"pm.environment.set(\"newUserGender\", \"male\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User name is created\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserName\")",
+											");",
+											"});",
+											"pm.test(\"User city is undefined\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"undefined\");",
+											"});",
+											"pm.test(\"User gender is created\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserGender\"));",
+											"});",
+											"pm.test(\"User age is created\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserAge\")",
+											");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{newUserName}}\",\n    \"age\": {{newUserAge}},\n    \"gender\": \"{{newUserGender}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+									"protocol": "https",
+									"host": [
+										"em",
+										"staging",
+										"api",
+										"onereach",
+										"ai"
+									],
+									"path": [
+										"http",
+										"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Post (n) 1",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName\", \"Bob\");",
+											"pm.environment.set(\"newUserAge\", 20);",
+											"pm.environment.set(\"newUserGender\", \"male\");",
+											"pm.environment.set(\"newUserCity\", \"Kharkiv\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Body matches string\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"Validation error: name is invalid\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{newUserName}}\",\n    \"age\": {{newUserAge}},\n    \"gender\": \"{{newUserGender}}\",\n    \"city\": \"{{newUserCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+									"protocol": "https",
+									"host": [
+										"em",
+										"staging",
+										"api",
+										"onereach",
+										"ai"
+									],
+									"path": [
+										"http",
+										"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Post (n) 2",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName\", \"Anastasia\");",
+											"pm.environment.set(\"newUserAge\", 101);",
+											"pm.environment.set(\"newUserGender\", \"female\");",
+											"pm.environment.set(\"newUserCity\", \"Kharkiv\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Body matches string\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"Validation error: age is invalid\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{newUserName}}\",\n    \"age\": {{newUserAge}},\n    \"gender\": \"{{newUserGender}}\",\n    \"city\": \"{{newUserCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+									"protocol": "https",
+									"host": [
+										"em",
+										"staging",
+										"api",
+										"onereach",
+										"ai"
+									],
+									"path": [
+										"http",
+										"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get requests - (variable-params)",
+					"item": [
+						{
+							"name": "New Request - Get (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"//pm.collectionVariables.set(\"id1_positive\",\"6e4bf493-454f-43d8-bb96-aca91dfdd9e2\");",
+											"//pm.collectionVariables.get(\"schema\");",
+											"//pm.collectionVariables.get(\"baseUrl\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 800ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{id1_positive}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id1_positive}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Get (n)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.get(\"id2_negative\");",
+											"pm.collectionVariables.get(\"schema\");",
+											"pm.collectionVariables.get(\"baseUrl\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Body matches string\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"No users found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{id2_negative}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id2_negative}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Patch Requests",
+					"item": [
+						{
+							"name": "New Request - Patch (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName_Patch\", \"Shakira\");",
+											"pm.environment.set(\"newUserAge_Patch\", 45);",
+											"pm.environment.set(\"newUserGender_Patch\", \"female\");",
+											"pm.environment.set(\"newUserCity_Patch\", \"Paris\")"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User name is patched\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserName_Patch\")",
+											");",
+											"});",
+											"pm.test(\"User city is patched\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserCity_Patch\"));",
+											"});",
+											"pm.test(\"User gender is patched\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserGender_Patch\")",
+											");",
+											"});",
+											"pm.test(\"User age is patched.\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.age).to.eql(pm.environment.get(\"newUserAge_Patch\"));",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"f53279b5-d8c3-4441-9899-9bf25f0bf9b1\",\n    \"name\": \"{{newUserName_Patch}}\",\n    \"age\": {{newUserAge_Patch}},\n    \"gender\": \"{{newUserGender_Patch}}\",\n    \"city\": \"{{newUserCity_Patch}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Patch (n)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName_Patch_n\", \"Shakira\");",
+											"pm.environment.set(\"newUserAge_Patch_n\", 4);",
+											"pm.environment.set(\"newUserGender_Patch_n\", \"baby\");",
+											"pm.environment.set(\"newUserCity_Patch_n\", \"Paris\")"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User city is patched.\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserCity_Patch_n\"))",
+											"});",
+											"pm.test(\"User name is patched.\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserName_Patch_n\")",
+											");",
+											"});",
+											"pm.test(\"User age is patched.\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.age).to.eql(pm.environment.get(\"newUserAge_Patch_n\"));",
+											"});",
+											"pm.test(\"User gender is invalid\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"Validation error: gender is invalid\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"f53279b5-d8c3-4441-9899-9bf25f0bf9b1\",\n    \"name\": \"{{newUserName_Patch_n}}\",\n    \"age\": {{newUserAge_Patch_n}},\n    \"gender\": \"{{newUserGender_Patch_n}}\",\n    \"city\": \"{{newUserCity_Patch_n}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Request",
+					"item": [
+						{
+							"name": "New Request - Get (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"id3_positive\",\"c0ad0842-d79d-4d10-b909-14adf876cc26\");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User is deleted\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"User is deleted\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{id3_positive}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id3_positive}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Get (n)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"id4_negative\",\" \");"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User is not found\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"No user found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{\"id4_negative\"}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{\"id4_negative\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Task_3",
+					"item": [
+						{
+							"name": "New Request - POST (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName\", \"Michael\");",
+											"pm.environment.set(\"newUserAge\", 55);",
+											"pm.environment.set(\"newUserGender\", \"male\");",
+											"pm.environment.set(\"newUserCity\", \"Kharkiv\");",
+											"",
+											"pm.environment.set(\"schema\", \"https\")",
+											"pm.environment.set(\"baseUrl\", \"em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6\")",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody); // тут витягуєм все з відповіді",
+											"pm.collectionVariables.set(\"created_user_id\", jsonData.id); // тут  записуєм значення з категорії id що в боді в змінну ",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"The created User name is correct.\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserName\")",
+											");",
+											"});",
+											"pm.test(\"The created User city is correct\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserCity\"));",
+											"});",
+											"pm.test(\"The created User gender is correct\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserGender\")",
+											");",
+											"});",
+											"pm.test(\"The created User age is correct\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserAge\")",
+											");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{newUserName}}\",\n    \"age\": {{newUserAge}},\n    \"gender\": \"{{newUserGender}}\",\n    \"city\": \"{{newUserCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - GET (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 800ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{created_user_id}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{created_user_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - PATCH (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"newUserName_Patch\", \"Shakira\");",
+											"pm.environment.set(\"newUserAge_Patch\", 45);",
+											"pm.environment.set(\"newUserGender_Patch\", \"female\");",
+											"pm.environment.set(\"newUserCity_Patch\", \"Paris\")"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"The edited User name is correct\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserName_Patch\")",
+											");",
+											"});",
+											"pm.test(\"The edited User city is correct\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserCity_Patch\"));",
+											"});",
+											"pm.test(\"The edited User gender is correct\", function () {",
+											"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"newUserGender_Patch\")",
+											");",
+											"});",
+											"pm.test(\"The edited User age is correct.\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.age).to.eql(pm.environment.get(\"newUserAge_Patch\"));",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"f53279b5-d8c3-4441-9899-9bf25f0bf9b1\",\n    \"name\": \"{{newUserName_Patch}}\",\n    \"age\": {{newUserAge_Patch}},\n    \"gender\": \"{{newUserGender_Patch}}\",\n    \"city\": \"{{newUserCity_Patch}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{created_user_id}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{created_user_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request - Get (p)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"User is deleted\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"User is deleted\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{schema}}://{{baseUrl}}/users?id={{created_user_id}}",
+									"protocol": "{{schema}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{created_user_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "newUserName",
+			"value": ""
+		},
+		{
+			"key": "newUserAge",
+			"value": ""
+		},
+		{
+			"key": "newUserGender",
+			"value": ""
+		},
+		{
+			"key": "newUserCity",
+			"value": ""
+		},
+		{
+			"key": "schema",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "id2_negative",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "id1_positive",
+			"value": ""
+		},
+		{
+			"key": "id3_positive",
+			"value": ""
+		},
+		{
+			"key": "id4_negative",
+			"value": ""
+		},
+		{
+			"key": "created_user_id",
+			"value": ""
+		}
+	]
+}
